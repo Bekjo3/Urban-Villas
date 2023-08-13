@@ -1,42 +1,18 @@
 import { useCallback } from "react";
 import "antd/dist/antd.min.css";
 import { Menu, Dropdown, Button } from "antd";
-import {
-  DownOutlined,
-  ArrowLeftOutlined,
-  ArrowRightOutlined,
-  CalendarOutlined,
-  CheckOutlined,
-  ClockCircleOutlined,
-  CloseOutlined,
-  DeleteOutlined,
-  EditOutlined,
-  ExclamationCircleOutlined,
-  HeartOutlined,
-  LeftOutlined,
-  LockOutlined,
-  MailOutlined,
-  PaperClipOutlined,
-  PhoneOutlined,
-  QuestionCircleOutlined,
-  ReloadOutlined,
-  RightOutlined,
-  SearchOutlined,
-  SendOutlined,
-  ShareAltOutlined,
-  UserOutlined,
-} from "@ant-design/icons";
+import { DownOutlined } from "@ant-design/icons";
 import { useRouter } from "next/router";
 
 const Hero = () => {
   const router = useRouter();
 
   const onRentClick = useCallback(() => {
-    router.push("/");
+    router.push("/properties");
   }, [router]);
 
   const onSearchCTAClick = useCallback(() => {
-    router.push("/");
+    router.push("/properties");
   }, [router]);
 
   return (
@@ -77,7 +53,14 @@ const Hero = () => {
                 <Dropdown
                   overlay={
                     <Menu>
-                      {[].map((option, index) => (
+                      {[ 
+                        {value:'New York'},
+                        {value: 'Los Angeles'},
+                        {value: 'Boston'},
+                        {value:"Chicago"},
+                        {value : "San Francisco"},
+                        { value :"Seattle"}
+                      ].map((option, index) => (
                         <Menu.Item key={index}>
                           <a onClick={(e) => e.preventDefault()}>
                             {option.value || ""}
@@ -121,10 +104,10 @@ const Hero = () => {
                   placement="bottomLeft"
                   trigger={["hover"]}
                 >
-                  <a onClick={(e) => e.preventDefault()}>
+                  <Button onClick={(e) => e.preventDefault()}>
                     {`Select property type `}
                     <DownOutlined />
-                  </a>
+                  </Button>
                 </Dropdown>
               </div>
               <div className="w-[155px] flex flex-col items-start justify-start gap-[16px]">
@@ -151,10 +134,10 @@ const Hero = () => {
                   placement="bottomLeft"
                   trigger={["hover"]}
                 >
-                  <a onClick={(e) => e.preventDefault()}>
+                  <Button onClick={(e) => e.preventDefault()}>
                     {`Select rent range `}
                     <DownOutlined />
-                  </a>
+                  </Button>
                 </Dropdown>
               </div>
               <button

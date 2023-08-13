@@ -22,7 +22,7 @@ const RentPropertiesForm = () => {
             volutpat.
           </div>
         </div>
-        <div className="self-stretch flex flex-row flex-wrap items-start justify-center gap-[40px] text-left text-base text-gray-white">
+        <div className="flex flex-row flex-wrap items-start justify-center gap-[30px] text-left text-base text-gray-white">
           <PropertyRentCard />
           <PropertyRentCard propBackgroundImage={`url("/card-21@3x.png")`} />
           <PropertyRentCard propBackgroundImage={`url("/card-31@3x.png")`} />
